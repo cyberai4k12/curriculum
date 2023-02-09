@@ -1,51 +1,48 @@
 +++
-title = "Modern Documentation Theme"
-
-
-# The homepage contents
+title = "AI & Cybersecurity for Teens"
 [extra]
-lead = '<b>AdiDoks</b> is a modern documentation theme, which is a port of the Hugo theme <a href="https://github.com/h-enk/">Doks</a> for Zola.'
-url = "/docs/getting-started/introduction/"
-url_button = "Get started"
-repo_version = "GitHub v0.1.0"
-repo_license = "Open-source MIT License."
-repo_url = "https://github.com/aaranxu/adidoks"
+lead = "A 40-hour curricular module for 13-15 year olds"
 
-# Menu items
-[[extra.menu.main]]
-name = "Docs"
-section = "docs"
-url = "/docs/getting-started/introduction/"
-weight = 10
+[[extra.activity]]
+title = "Activity 4: Intro to Natural Language Processing and Sentiment Analysis"
+duration = "120 minutes - Sentiment Analysis"
+summary = "In this lesson, students will learn about classification, and the use of natural language programming and an openly available API (ParallelDots) to classify text."
+objectives = [
+    "learn about classificaion through AI/ML.",
+    "explore classification in NetsBlox through the sentimental “writer” - a basic program that uses an API to classify content (i.e., words/music)."
+]
+extensions = "Classify music lyrics/NYT articles"
+vocabulary = [
+  "Machine learning",
+  "Classification",
+  "Natural Language Processing",
+  "Sentiment Analysis",
+  "Polarity",
+  "API",
+]
+activities = [
+  "Introduction to NLP and Sentiment Analysis",
+  "Twitter Sentimental Writer (unplugged movies reviews)",
+  "Music (song lyrics) Sentiment using Genius API (NetsBlox/View in Python)",
+]
+[[extra.activity.student_resources]]
+name = "Sentimental Writer Starter Code"
+link = "https://curriculum.netsblox.org/9-week/aiml/sentiment-starter.nb"
 
-[[extra.menu.main]]
-name = "Blog"
-section = "blog"
-url = "/blog/"
-weight = 20
+[[extra.activity.teacher_resources]]
+name = "Sentiment Writer Teaching Guide"
+path = "9-week/aiml/sentiment-guide.pdf"
 
-[[extra.list]]
-title = "Security aware"
-content = 'Get A+ scores on <a href="https://observatory.mozilla.org/analyze/adidoks.org">Mozilla Observatory</a> out of the box. Easily change the default Security Headers to suit your needs.'
+[[extra.activity.teacher_resources]]
+name = "Sentiment Writer Slides"
+path = "9-week/aiml/sentiment.ppt"
 
-[[extra.list]]
-title = "Fast by default ⚡️"
-content = 'Get 100 scores on <a href="https://googlechrome.github.io/lighthouse/viewer/?gist=7731347bb8ce999eff7428a8e763b637">Google Lighthouse</a> by default. Doks removes unused css, prefetches links, and lazy loads images.'
+[[extra.activity.teacher_resources]]
+name = "Instructional Video"
+path = "9-week/aiml/sentiment-guide.mp4"
 
-[[extra.list]]
-title = "SEO-ready"
-content = "Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking."
-
-[[extra.list]]
-title = "Full text search"
-content = "Search your Doks site with FlexSearch. Easily customize index settings and search options to your liking."
-
-[[extra.list]]
-title = "Page layouts"
-content = "Build pages with a landing page, blog, or documentation layout. Add custom sections and components to suit your needs."
-
-[[extra.list]]
-title = "Dark mode"
-content = "Switch to a low-light UI with the click of a button. Change colors with variables to match your branding."
+[[extra.activity.additional_resources]]
+name = "How NLP works"
+link = "https://www.youtube.com/watch?v=CMrHM8a3hqw"
 
 +++
