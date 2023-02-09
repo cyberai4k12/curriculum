@@ -8,7 +8,7 @@ title = "Activity 4: Intro to Natural Language Processing and Sentiment Analysis
 duration = "120 minutes - Sentiment Analysis"
 summary = "In this lesson, students will learn about classification, and the use of natural language programming and an openly available API (ParallelDots) to classify text."
 objectives = [
-    "learn about classificaion through AI/ML.",
+    "learn about classification through AI/ML.",
     "explore classification in NetsBlox through the sentimental “writer” - a basic program that uses an API to classify content (i.e., words/music)."
 ]
 extensions = "Classify music lyrics/NYT articles"
