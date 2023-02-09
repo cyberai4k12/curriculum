@@ -51,6 +51,18 @@
             <th scope="row">Vocabulary</th>
             <td style="text-align: left">{{ activity.vocabulary | join(sep = "; ") }}</td>
           </tr>
+          {% if activity.ai_concepts %}
+          <tr>
+            <th scope="row">AI/ML Concepts/Topics</th>
+            <td style="text-align: left">{{ activity.ai_concepts | join(sep = "; ") }}</td>
+          </tr>
+          {% endif %}
+          {% if activity.security_concepts %}
+          <tr>
+            <th scope="row">Cybersecurity Concepts/Topics</th>
+            <td style="text-align: left">{{ activity.security_concepts | join(sep = "; ") }}</td>
+          </tr>
+          {% endif %}
           <tr>
             <th scope="row">Activities</th>
             <td>
@@ -61,6 +73,36 @@
               </ul>
             </td>
           </tr>
+          {% if activity.hooks %}
+          <tr>
+            <th scope="row">Real-World "Hook"/Issue</th>
+            <td>
+              <ul style="list-style: none">
+                {% for resource in activity.hooks %}
+                <li>{{ resource }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+          {% endif %}
+          {% if activity.discussion %}
+          <tr>
+            <th scope="row">Discussion Questions</th>
+            <td>
+              <ul style="list-style: none">
+                {% for topic in activity.discussion %}
+                <li>{{ topic }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+          {% endif %}
+          {% if activity.unplugged %}
+          <tr>
+            <th scope="row">Unplugged/Other Pre-activity</th>
+            <td style="text-align: left">{{ activity.unplugged }}</td>
+          </tr>
+          {% endif %}
           <tr>
             <th scope="row">Student Resources</th>
             <td>
