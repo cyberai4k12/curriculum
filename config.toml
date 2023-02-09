@@ -24,7 +24,7 @@ taxonomies = [
 # Whether to build a search index to be used later on by a JavaScript library
 # When set to "true", a search index is built from the pages and section
 # content for `default_language`.
-build_search_index = true
+build_search_index = false
 
 [languages.fi]
 title="AdiDoks"
