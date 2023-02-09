@@ -1,7 +1,7 @@
 +++
 title = "AI & Cybersecurity for Teens"
 [extra]
-lead = "A 40-hour curricular module for 13-15 year olds"
+lead = "Curricular activity sequence integrating AI and Cybersecurity for High School"
 
 [[extra.activity]]
 title = "Activity 4: Intro to Natural Language Processing and Sentiment Analysis"
