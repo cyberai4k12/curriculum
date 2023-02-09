@@ -1,7 +1,7 @@
 +++
 title = "AI & Cybersecurity for Teens"
 [extra]
-lead = "Curricular activity sequence integrating AI and Cybersecurity for High School"
+lead = "A curricular activity sequence integrating AI and Cybersecurity for High School"
 
 [[extra.activity]]
 title = "Activity 4: Intro to Natural Language Processing and Sentiment Analysis"
