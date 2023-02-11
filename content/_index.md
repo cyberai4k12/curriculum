@@ -4,6 +4,48 @@ title = "AI & Cybersecurity for Teens"
 lead = "A curricular activity sequence integrating AI and Cybersecurity for High School"
 
 [[extra.activity]]
+title = "Activity 0: Intro to NetsBlox, RPCs and Simple Chat App"
+duration = "2 periods (45 minutes)"
+summary = "In this lesson, students will be introduced to NetsBlox, specifically the messaging blocks to create a ‘simple chat app’ (which will be extended in subsequent projects)."
+objectives = [
+    "learn about NetsBlox, and its key abstractions for  RPCs (Call block) and messaging (Send/Receive Message).",
+]
+vocabulary = [
+  "Distributed Computing",
+  "Remote Procedure Calls",
+  "Message Passing"
+]
+activities = [
+  "Create your <a href=\"https://editor.netsblox.org/\">NetsBlox account</a>",
+  "Code-along the Map & Covid App (first 50 minutes of <a href=\"https://www.youtube.com/watch?v=KjMK23TjxO8\">this video</a>)",
+  "<a href=\"https://youtu.be/KjMK23TjxO8?t=2435\">Simple Chat App</a> (Starts at 40 min mark))",
+]
+
+[[extra.activity.student_resources]]
+name = "Intro Project for NetsBlox RPCs"
+link = "https://www.youtube.com/watch?v=KjMK23TjxO8"
+
+[[extra.activity.teacher_resources]]
+name = "Service Docs: Google Maps"
+link = "https://editor.netsblox.org/docs/services/GoogleMaps/index.html"
+
+[[extra.activity.teacher_resources]]
+name = "Service Docs: Weather"
+link = "https://editor.netsblox.org/docs/services/Weather/index.html"
+
+[[extra.activity.teacher_resources]]
+name = "Service Docs: Geolocation"
+link = "https://editor.netsblox.org/docs/services/Geolocation/index.html"
+
+[[extra.activity.additional_resources]]
+name = "Explore netsblox.org"
+link = "http://netsblox.org"
+
+#[[extra.activity]]
+#title = "Activity 1: Cryptography & Coding a Caesar Cipher"
+#duration = "1 class period (45 minutes)"
+
+[[extra.activity]]
 title = "Activity 4: Intro to Natural Language Processing and Sentiment Analysis"
 duration = "120 minutes - Sentiment Analysis"
 summary = "In this lesson, students will learn about classification, and the use of natural language programming and an openly available API (ParallelDots) to classify text."

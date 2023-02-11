@@ -68,7 +68,7 @@
             <td>
               <ul>
                 {% for act in activity.activities %}
-                <li>{{ act }}</li>
+                <li>{{ act | safe}}</li>
                 {% endfor %}
               </ul>
             </td>
@@ -118,7 +118,11 @@
             <td>
               <ul style="list-style: none">
                 {% for resource in activity.teacher_resources %}
-                <li><a href="https://curriculum.netsblox.org/{{ resource.path }}">{{ resource.name }} 🔒</a></li>
+                  {% if resource.path %}
+                    <li><a href="https://curriculum.netsblox.org/{{ resource.path }}">{{ resource.name }} 🔒</a></li>
+                  {% else %}
+                    <li><a href="https://curriculum.netsblox.org/{{ resource.link }}">{{ resource.name }} 🔒</a></li>
+                  {% endif %}
                 {% endfor %}
               </ul>
             </td>
