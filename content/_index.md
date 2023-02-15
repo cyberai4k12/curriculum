@@ -17,7 +17,7 @@ vocabulary = [
 ]
 activities = [
   "Create your <a href=\"https://editor.netsblox.org/\">NetsBlox account</a>",
-  "Code-along the Map & Covid App (first 50 minutes of <a href=\"https://www.youtube.com/watch?v=KjMK23TjxO8\" target="_blank">this video</a>)",
+  "Code-along the Map & Covid App (first 50 minutes of <a href=\"https://www.youtube.com/watch?v=KjMK23TjxO8\" target=\"_blank\">this video</a>)",
   "<a href=\"https://youtu.be/KjMK23TjxO8?t=2435\">Simple Chat App</a> (Starts at 40 min mark))",
 ]
 
