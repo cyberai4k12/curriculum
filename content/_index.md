@@ -41,9 +41,70 @@ link = "https://editor.netsblox.org/docs/services/Geolocation/index.html"
 name = "Explore netsblox.org"
 link = "http://netsblox.org"
 
-#[[extra.activity]]
-#title = "Activity 1: Cryptography & Coding a Caesar Cipher"
-#duration = "1 class period (45 minutes)"
+[[extra.activity]]
+title = "Activity 1: Cryptography & Coding a Caesar Cipher"
+duration = "1 class period (45 minutes)"
+summary = "In this lesson, students will look at the historical significance of the Caesar Cipher and learn how to implement the shift-cipher using both paper/pencil and NetsBlox. "
+objectives = [
+  "learn about a simple shift-cipher",
+  "encrypt/decrypt messages using paper and pencil",
+  "implement shift cipher in NetsBlox"
+]
+vocabulary = [
+  "Cipher",
+  "Encrypt",
+  "Decrypt",
+  "Plaintext",
+  "Ciphertext",
+]
+security_concepts = [
+  "Encryption",
+  "Obfuscation of information",
+]
+activities = [
+  "Introduction to encryption & historical context of Caesar Cipher",
+  "Paper/Pencil implementation of Caesar Cipher",
+  "Netsblox implementation of Caesar Shift Cipher",
+]
+# TODO: add real-world hook
+discussion = [
+  "What data needs to be encrypted?",
+  "What are the downsides of encrypting data?",
+  "How many possible keys are possible with a Caesar Shift Cipher?",
+]
+
+[[extra.activity.student_resources]]
+name = "Caesar Cipher Activity in NetsBlox"
+link = "https://editor.netsblox.org/?extensions=[%22https%3A%2F%2Fnetsblox.github.io%2Fexercises%2Fautograders%2Fcaesar-shift.js%22]"
+
+[[extra.activity.student_resources]]
+name = "Brute Force Cracking Caesar Cipher" 
+link = "https://editor.netsblox.org/?extensions=[%22https%3A%2F%2Fnetsblox.github.io%2Fexercises%2Fautograders%2Fcrack-caesar-brute-force.js%22]"
+
+[[extra.activity.teacher_resources]]
+name = "NetsBlox Cryptography Exercises"
+link = "https://netsblox.github.io/exercises?q=cryptography"
+
+[[extra.activity.teacher_resources]]
+name = "Caesar Cipher (Wikipedia)"
+link = "https://en.wikipedia.org/wiki/Caesar_cipher"
+
+[[extra.activity.teacher_resources]]
+name = "Practical Cryptography: Caesar Cipher"
+link = "http://practicalcryptography.com/ciphers/caesar-cipher/"
+
+[[extra.activity.additional_resources]]
+name = "CryptoClub: Desert Oasis (Game)"
+link = "https://www.cryptoclub.org/#vDesertOasis"
+
+[[extra.activity.additional_resources]]
+name = "TED Talk: Why Privacy Matters"
+link = "https://www.ted.com/talks/alessandro_acquisti_what_will_a_future_without_secrets_look_like?language=en"
+
+
+[[extra.activity.additional_resources]]
+name = "Time it takes to brute force a password (aka why we need special characters)"
+link = "https://www.techrepublic.com/article/how-an-8-character-password-could-be-cracked-in-less-than-an-hour/"
 
 [[extra.activity]]
 title = "Activity 4: Intro to Natural Language Processing and Sentiment Analysis"
