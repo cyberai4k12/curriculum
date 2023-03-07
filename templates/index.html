@@ -3,180 +3,196 @@
 {% block content %}
 <div class="wrap container" role="document">
   <div class="content">
-    <section class="section container-fluid mt-n3 pb-3">
-      <div class="row justify-content-center">
-        <div class="col-lg-12 text-center">
-          <h1 class="mt-0">{{ section.title | default(value="Modern Documentation Theme") }}</h1>
-        </div>
-        <div class="col-lg-9 col-xl-8 text-center">
-          <p class="lead">{{ section.extra.lead | default(value="Please start setting config.toml and adding your content.") | safe }}</p>
-          <!-- TODO: do we want to add a license?? -->
-          <!--<p class="meta">{{ section.extra.repo_license | default(value="MIT")}} <a href="{{ section.extra.repo_url | default(value="https://github.com/aaranxu/adidoks") | safe }}">{{ section.extra.repo_version | default(value="0.1.0") }}</a></p>-->
-        </div>
+
+    <div class="row flex-xl-nowrap">
+      <div class="col-lg-5 col-xl-4 curriculum-sidebar">
+      	<nav class="docs-links" aria-label="Main navigation">
+      		<h3>Overview</h3>
+              {% if section.extra.activity %}
+      		<ul class="list-unstyled">
+              {% for activity in section.extra.activity %}
+      			<li><a class="docs-link" href="#activity-{{ loop.index }}">{{ activity.title }}</a></li>
+              {% endfor %}
+      		</ul>
+              {% endif %}
+      	</nav>
       </div>
-    </section>
+
+      <!-- FIXME: the width is too short -->
+      <main class="docs-content">
+        <section class="section container-fluid mt-n3 pb-3">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+              <h1 class="mt-0">{{ section.title | default(value="Modern Documentation Theme") }}</h1>
+            </div>
+            <div class="col-lg-9 col-xl-8 text-center">
+              <p class="lead">{{ section.extra.lead | default(value="Please start setting config.toml and adding your content.") | safe }}</p>
+              <!-- TODO: do we want to add a license?? -->
+              <!--<p class="meta">{{ section.extra.repo_license | default(value="MIT")}} <a href="{{ section.extra.repo_url | default(value="https://github.com/aaranxu/adidoks") | safe }}">{{ section.extra.repo_version | default(value="0.1.0") }}</a></p>-->
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-sm">
+          <div class="container">
+            <div class="row justify-content-center text-center">
+              {% if section.extra.activity %}
+              {% for activity in section.extra.activity %}
+                <h2 id="activity-{{ loop.index }}">{{ activity.title }}</h2>
+                <table class="table" style="text-align: left">
+                  <tbody>
+                  <tr>
+                    <th scope="row">Estimated Duration</th>
+                    <td >{{ activity.duration }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Lesson Summary</th>
+                    <td style="text-align: left">{{ activity.summary }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Learning Objectives</th>
+                    <td style="text-align: left">Students will:
+                      <ul>
+                        {% for objective in activity.objectives %}
+                        <li>{{ objective }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Vocabulary</th>
+                    <td style="text-align: left">{{ activity.vocabulary | join(sep = "; ") }}</td>
+                  </tr>
+                  {% if activity.ai_concepts %}
+                  <tr>
+                    <th scope="row">AI/ML Concepts/Topics</th>
+                    <td style="text-align: left">{{ activity.ai_concepts | join(sep = "; ") }}</td>
+                  </tr>
+                  {% endif %}
+                  {% if activity.security_concepts %}
+                  <tr>
+                    <th scope="row">Cybersecurity Concepts/Topics</th>
+                    <td style="text-align: left">{{ activity.security_concepts | join(sep = "; ") }}</td>
+                  </tr>
+                  {% endif %}
+                  <tr>
+                    <th scope="row">Activities</th>
+                    <td>
+                      <ul>
+                        {% for act in activity.activities %}
+                        <li>{{ act | safe}}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  {% if activity.hooks %}
+                  <tr>
+                    <th scope="row">Real-World "Hook"/Issue</th>
+                    <td>
+                      <ul style="list-style: none">
+                        {% for resource in activity.hooks %}
+                        <li>{{ resource | safe }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  {% endif %}
+                  {% if activity.discussion %}
+                  <tr>
+                    <th scope="row">Discussion Questions</th>
+                    <td>
+                      <ul style="list-style: none">
+                        {% for topic in activity.discussion %}
+                        <li>{{ topic }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  {% endif %}
+                  {% if activity.unplugged %}
+                  <tr>
+                    <th scope="row">Unplugged/Other Pre-activity</th>
+                    <td style="text-align: left">
+                      <ul style="list-style: none">
+                        {% for game in activity.unplugged %}
+                        <li>{{ game | safe }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  {% endif %}
+                  <tr>
+                    <th scope="row">Student Resources</th>
+                    <td>
+                      <ul style="list-style: none">
+                        {% for resource in activity.student_resources %}
+                        <li><a href="{{ resource.link }}">{{ resource.name }} </a></li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Teacher Resources</th>
+                    <td>
+                      <ul style="list-style: none">
+                        {% for resource in activity.teacher_resources %}
+                          {% if resource.path %}
+                            <li><a href="https://curriculum.netsblox.org/{{ resource.path }}">{{ resource.name }} 🔒</a></li>
+                          {% else %}
+                            <li><a href="https://curriculum.netsblox.org/{{ resource.link }}">{{ resource.name }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  {% if activity.extensions%}
+                  <tr>
+                    <th scope="row">Possible Extensions</th>
+                    <td style="text-align: left">
+                      <ul style="list-style: none">
+                        {% for extension in activity.extensions%}
+                        <li>{{ extension | safe }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  {% endif %}
+                  {% if activity.additional_resources %}
+                  <tr>
+                    <th scope="row">Additional Resources</th>
+                    <td>
+                      <ul style="list-style: none">
+                        {% for resource in activity.additional_resources %}
+                        <li><a href="{{ resource.link }}">{{ resource.name }} </a></li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  {% endif %}
+                  {% if activity.reflections%}
+                  <tr>
+                    <th scope="row">Post Activity Discussion/Reflection</th>
+                    <td style="text-align: left">
+                      <ul style="list-style: none">
+                        {% for discuss in activity.reflections%}
+                        <li>{{ discuss | safe }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                  </tr>
+                  {% endif %}
+                  </tbody>
+                </table>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
   </div>
 </div>
 
-<section class="section section-sm">
-  <div class="container">
-    <div class="row justify-content-center text-center">
-      {% if section.extra.activity %}
-      {% for activity in section.extra.activity %}
-        <h2>{{ activity.title }}</h2>
-        <table class="table" style="text-align: left">
-          <tbody>
-          <tr>
-            <th scope="row">Estimated Duration</th>
-            <td >{{ activity.duration }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Lesson Summary</th>
-            <td style="text-align: left">{{ activity.summary }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Learning Objectives</th>
-            <td style="text-align: left">Students will:
-              <ul>
-                {% for objective in activity.objectives %}
-                <li>{{ objective }}</li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Vocabulary</th>
-            <td style="text-align: left">{{ activity.vocabulary | join(sep = "; ") }}</td>
-          </tr>
-          {% if activity.ai_concepts %}
-          <tr>
-            <th scope="row">AI/ML Concepts/Topics</th>
-            <td style="text-align: left">{{ activity.ai_concepts | join(sep = "; ") }}</td>
-          </tr>
-          {% endif %}
-          {% if activity.security_concepts %}
-          <tr>
-            <th scope="row">Cybersecurity Concepts/Topics</th>
-            <td style="text-align: left">{{ activity.security_concepts | join(sep = "; ") }}</td>
-          </tr>
-          {% endif %}
-          <tr>
-            <th scope="row">Activities</th>
-            <td>
-              <ul>
-                {% for act in activity.activities %}
-                <li>{{ act | safe}}</li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          {% if activity.hooks %}
-          <tr>
-            <th scope="row">Real-World "Hook"/Issue</th>
-            <td>
-              <ul style="list-style: none">
-                {% for resource in activity.hooks %}
-                <li>{{ resource | safe }}</li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          {% endif %}
-          {% if activity.discussion %}
-          <tr>
-            <th scope="row">Discussion Questions</th>
-            <td>
-              <ul style="list-style: none">
-                {% for topic in activity.discussion %}
-                <li>{{ topic }}</li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          {% endif %}
-          {% if activity.unplugged %}
-          <tr>
-            <th scope="row">Unplugged/Other Pre-activity</th>
-            <td style="text-align: left">
-              <ul style="list-style: none">
-                {% for game in activity.unplugged %}
-                <li>{{ game | safe }}</li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          {% endif %}
-          <tr>
-            <th scope="row">Student Resources</th>
-            <td>
-              <ul style="list-style: none">
-                {% for resource in activity.student_resources %}
-                <li><a href="{{ resource.link }}">{{ resource.name }} </a></li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Teacher Resources</th>
-            <td>
-              <ul style="list-style: none">
-                {% for resource in activity.teacher_resources %}
-                  {% if resource.path %}
-                    <li><a href="https://curriculum.netsblox.org/{{ resource.path }}">{{ resource.name }} 🔒</a></li>
-                  {% else %}
-                    <li><a href="https://curriculum.netsblox.org/{{ resource.link }}">{{ resource.name }}</a></li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          {% if activity.extensions%}
-          <tr>
-            <th scope="row">Possible Extensions</th>
-            <td style="text-align: left">
-              <ul style="list-style: none">
-                {% for extension in activity.extensions%}
-                <li>{{ extension | safe }}</li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          {% endif %}
-          {% if activity.additional_resources %}
-          <tr>
-            <th scope="row">Additional Resources</th>
-            <td>
-              <ul style="list-style: none">
-                {% for resource in activity.additional_resources %}
-                <li><a href="{{ resource.link }}">{{ resource.name }} </a></li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          {% endif %}
-          {% if activity.reflections%}
-          <tr>
-            <th scope="row">Post Activity Discussion/Reflection</th>
-            <td style="text-align: left">
-              <ul style="list-style: none">
-                {% for discuss in activity.reflections%}
-                <li>{{ discuss | safe }}</li>
-                {% endfor %}
-              </ul>
-            </td>
-          </tr>
-          {% endif %}
-          </tbody>
-        </table>
-      {% endfor %}
-      {% endif %}
-    </div>
-  </div>
-</section>
-
-<section class="section section-sm container-fluid">
-  <div class="row justify-content-center text-center">
-    <div class="col-lg-9"></div>
-  </div>
-</section>
 {% endblock content %}
+
