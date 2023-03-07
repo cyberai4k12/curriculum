@@ -42,9 +42,6 @@
                 <li>{{ objective }}</li>
                 {% endfor %}
               </ul>
-                {% if activity.extensions %}
-                Extension(s): {{ activity.extensions }}
-                {% endif %}
             </td>
           </tr>
           <tr>
@@ -79,7 +76,7 @@
             <td>
               <ul style="list-style: none">
                 {% for resource in activity.hooks %}
-                <li>{{ resource }}</li>
+                <li>{{ resource | safe }}</li>
                 {% endfor %}
               </ul>
             </td>
@@ -100,7 +97,13 @@
           {% if activity.unplugged %}
           <tr>
             <th scope="row">Unplugged/Other Pre-activity</th>
-            <td style="text-align: left">{{ activity.unplugged }}</td>
+            <td style="text-align: left">
+              <ul style="list-style: none">
+                {% for game in activity.unplugged %}
+                <li>{{ game | safe }}</li>
+                {% endfor %}
+              </ul>
+            </td>
           </tr>
           {% endif %}
           <tr>
@@ -127,6 +130,19 @@
               </ul>
             </td>
           </tr>
+          {% if activity.extensions%}
+          <tr>
+            <th scope="row">Possible Extensions</th>
+            <td style="text-align: left">
+              <ul style="list-style: none">
+                {% for extension in activity.extensions%}
+                <li>{{ extension | safe }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+          {% endif %}
+          {% if activity.additional_resources %}
           <tr>
             <th scope="row">Additional Resources</th>
             <td>
@@ -137,6 +153,19 @@
               </ul>
             </td>
           </tr>
+          {% endif %}
+          {% if activity.reflections%}
+          <tr>
+            <th scope="row">Post Activity Discussion/Reflection</th>
+            <td style="text-align: left">
+              <ul style="list-style: none">
+                {% for discuss in activity.reflections%}
+                <li>{{ discuss | safe }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+          {% endif %}
           </tbody>
         </table>
       {% endfor %}
