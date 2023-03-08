@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>CyberAI4K12</title>
+	<subtitle>A 40-hour curricular module for 13-15 year olds</subtitle>
+	<link href="https://cyberai4k12.github.io/curriculum/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://cyberai4k12.github.io/curriculum/"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-04-01T08:50:45+00:00</updated>
+	<id>https://cyberai4k12.github.io/curriculum/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Aaran Xu</title>
+		<published>2021-04-01T08:50:45+00:00</published>
+		<updated>2021-04-01T08:50:45+00:00</updated>
+		<link rel="alternate" href="https://cyberai4k12.github.io/curriculum/authors/aaran-xu/" type="text/html"/>
+		<id>https://cyberai4k12.github.io/curriculum/authors/aaran-xu/</id>
+		<content type="html">&lt;p&gt;Creator of &lt;strong&gt;AdiDoks&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aaranxu&quot;&gt;@aaranxu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
