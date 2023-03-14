@@ -71,6 +71,10 @@
         <section class="section section-sm">
           <div class="container">
             <div class="row justify-content-center text-center">
+              {% if section.extra.preface %}
+                <h2>{{ section.extra.preface.title | safe }}</h2>
+                <p>{{ section.extra.preface.description | safe }}</p>
+              {% endif %}
               {% if section.extra.activity %}
               {% for activity in section.extra.activity %}
                 <h2 id="activity-{{ loop.index }}">{{ activity.title }}</h2>
