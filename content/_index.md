@@ -632,7 +632,7 @@ discussion = [
 
 [[extra.activity.student_resources]]
 name = "Circle GAN Starter Code"
-link = "https://editor.netsblox.org/?action=present&Username=brian&ProjectName=Circle%20GAN%20Template&editMode&noRun"
+link = "https://editor.netsblox.org/?action=present&Username=brian&ProjectName=Circle%20GAN%20Templatev2&editMode&noRun"
 
 [[extra.activity.student_resources]]
 name = "GAN Lab"
@@ -640,7 +640,7 @@ link = "https://poloclub.github.io/ganlab/"
 
 [[extra.activity.teacher_resources]]  # TODO: make this link protected! (Needs to be updated first)
 name = "Circle GAN Solution"
-link = "https://editor.netsblox.org/?action=present&Username=brian&ProjectName=Circle%20GAN&"
+path = "act/11/CircleGAN.nb"
 
 [[extra.activity.additional_resources]]
 name = "Train a GAN in Python"
