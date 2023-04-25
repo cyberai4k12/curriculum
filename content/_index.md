@@ -513,7 +513,7 @@ link = "https://editor.netsblox.org/?action=present&Username=brian&ProjectName=D
 
 [[extra.activity.teacher_resources]]
 name = "Solution to Decision Tree Activity"
-path = "act/8/Decision%20Tree%20Solution.nb"
+path = "act/8/DecisionTreeSolution.nb"
 
 [[extra.activity.additional_resources]]
 name = "How to spot fake social media accounts"
