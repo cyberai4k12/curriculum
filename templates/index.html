@@ -68,10 +68,12 @@
                       </ul>
                     </td>
                   </tr>
+                  {% if activity.vocabulary %}
                   <tr>
                     <th scope="row">Vocabulary</th>
                     <td style="text-align: left">{{ activity.vocabulary | join(sep = "; ") }}</td>
                   </tr>
+                  {% endif %}
                   {% if activity.ai_concepts %}
                   <tr>
                     <th scope="row">AI/ML Concepts/Topics</th>

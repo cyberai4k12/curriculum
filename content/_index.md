@@ -120,8 +120,6 @@ link = "https://www.ted.com/talks/alessandro_acquisti_what_will_a_future_without
 name = "Time it takes to brute force a password (aka why we need special characters)"
 link = "https://www.techrepublic.com/article/how-an-8-character-password-could-be-cracked-in-less-than-an-hour/"
 
-# TODO: add post activity discussion/reflection
-
 [[extra.activity]]
 title = "Activity 2: Intro to Chat App"
 duration = "2 class periods (45-50 minutes each). One for chat app and one for encryption/decryption of messages."
@@ -131,7 +129,7 @@ objectives = [
   "Create a simple message passing application in NetsBlox",
   "Encrypt/decrypt messages sent to each other",
 ]
-vocabulary = ["Message passing"]
+vocabulary = ["Message passing", "Encrypt", "Decrypt", "Address", "Role"]
 security_concepts = [
   "Encryption",
 ]
@@ -211,15 +209,17 @@ vocabulary = [
 ]
 security_concepts = [
   "Message passing",
-  "Message moderation",
-  "Message encryption",
+  "Content moderation",
+  "Encryption",
 ]
 activities = [
   "Code-along a client-server chat app",
   "Extend it to have the server play other roles such as message translation, trying to break messages encrypted using a Caesar Cipher",
 ]
 discussion = [
-  "To Do!", # TODO: this was a duplicate of the one above
+  "How is this chat app different from the first one? Why did we change it?",
+  "Why do we need to connect to the server?",
+  "Can we still fool the server so it can't break our encryption?",
 ]
 extensions = [
   "Translation",
@@ -250,7 +250,9 @@ title = "Activity 4b: Denial of Service Attacks (Extending Chat App)"
 duration = "1 class period"
 summary = "In this lesson, students extend the previous chat application to explore denial of service (DoS) attacks."
 objectives = [
-  "",
+  "Perform a denial of service attack by overwhelming it with messages",
+  "Work together to add safeguards to the server to prevent DoS attacks",
+  "Reflect on approaches and connections to classification and rule-based AI",
 ]
 vocabulary = [
   "Denial of Service (DoS)",
@@ -262,7 +264,8 @@ security_concepts = [
   "Distributed Denial of Service",
 ]
 ai_concepts = [
-  "Rule-based AI: An AI system that comprises a set of human-coded rules that result in pre-defined outcomes (similar to if-then logic)."
+  "Rule-based AI: An AI system that comprises a set of human-coded rules that result in pre-defined outcomes (similar to if-then logic).",
+  "Classification",
 ]
 activities = [
   "Discuss Denial of Service attacks",
@@ -348,14 +351,19 @@ objectives = [
   "discuss the issue of online safety and cyberbullying, the impact of harmful language",
   "explore how we can use AI to detect and prevent sending hurtful words via chat",
 ]
-vocabulary = [
+vocubulary = [
+  "Cyberbullying",
+  "Online safety",
 ]
 ai_concepts = [
-  "classification",
+  "Classification",
+  "Sentiment Analysis",
+  "Toxic/Abusive language detection",
+  "Natural Language Processing",
 ]
 security_concepts = [
-  "cyberbullying",
-  "online safety",
+  "Cyberbullying",
+  "Online safety",
 ]
 activities = [
   "\"Chat App meets Sentimental Writer\" - extend the chat app to use the ParallelDots service to determine if we should flag/block text.",
@@ -399,10 +407,10 @@ objectives = [
 ]
 vocabulary = [
   "AI",
-  "machine learning",
-  "classification",
-  "models",
-  "training a model",
+  "Machine learning",
+  "Classification",
+  "ML Model",
+  "Training a model",
 ]
 activities = [
   "Discuss how AI is all-pervasive today",
@@ -487,7 +495,12 @@ objectives = [
   "Gain hands-on experience with rule-based AI",
   "Learn how rules can be automatically selected to construct a decision tree from data",
 ]
-vocabulary = []
+vocabulary = [
+  "Classify",
+  "Building a decision tree",
+  "Entropy",
+  "Features",
+]
 ai_concepts = [
   "Decision Tree",
   "Rule-based AI",
@@ -504,7 +517,9 @@ activities = [
   "Decision tree learning block as Parsons problem",
 ]
 discussion = [
-  "",
+  "Does changing the data change the learned tree?",
+  "How could you make a bot to fool the tree? What features would it need to have?",
+  "What bot would fool the model and tweet the most?",
 ]
 
 [[extra.activity.student_resources]]
@@ -580,14 +595,15 @@ objectives = [
   "Implement an optimization algorithm for generating adversarial examples",
 ]
 ai_concepts = [
-  "gradient descent",
-  "optimization",
-  "adversarial examples",
-  "classification",
+  "Gradient descent",
+  "Optimization",
+  "Adversarial examples",
+  "Classification",
 ]
 vocabulary = [
   "Adversarial examples",
   "Optimization",
+  "Model parameters"
 ]
 activities = [
   "Visualize the predictions of the model in the previous activity for many made-up points",
@@ -596,7 +612,8 @@ activities = [
   "Explore an online tool for generating adversarial examples (link below)"
 ]
 discussion = [
-  "",
+  "What implications could adversarial examples have for self-driving cars?",
+  "What would it mean to generate adv. examples for a facial recognition model?",
 ]
 
 [[extra.activity.student_resources]]
@@ -628,6 +645,8 @@ activities = [
   "Train a GAN in the browser using GAN Lab",
 ]
 discussion = [
+  "Think back to the Find the Minimum game. What would the y-axis represent for the generator? What would the x-axis represent?",
+  "What would the y-axis represent for the discriminator? What would the x-axis represent?",
 ]
 
 [[extra.activity.student_resources]]
