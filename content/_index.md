@@ -3,7 +3,7 @@ title = "AI & Cybersecurity for Teens"
 [extra]
 lead = "A curricular activity sequence integrating AI and Cybersecurity for High School"
 [extra.preface]
-description = "(<a href=\"https://docs.google.com/presentation/d/1bVGZPKy6crJFbNV2cWNZykkhATH4gU7YLqiVDh6V9Qk/edit?usp=sharing\">Wondering why AI+Cybersecurity?</a>)"
+description = "(<a href=\"https://docs.google.com/presentation/d/1bVGZPKy6crJFbNV2cWNZykkhATH4gU7YLqiVDh6V9Qk/edit?usp=sharing\">Wondering why AI+Cybersecurity?</a> or <a href=\"./overview.png\">Looking for a concept map?</a>)"
 
 [[extra.activity]]
 title = "Activity 0: Intro to NetsBlox, RPCs and Simple Chat App"

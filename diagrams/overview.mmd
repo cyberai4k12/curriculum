@@ -1,0 +1,107 @@
+---
+title: "Cybersecurity and AI/ML Concept Map"
+---
+  graph LR;
+  subgraph dc[Distributed Computing]
+    Protocol:::dc;
+    MP[Message Passing]:::dc;
+    Client:::dc;
+    Server:::dc;
+
+    Client:::dc--->|communicates using|MP:::dc;
+    Server:::dc--->|communicates using|MP:::dc;
+    MP:::dc--->|requires an agreed upon|Protocol:::dc;
+  end
+
+  subgraph Cybersecurity
+    Encryption:::cybersec;
+    RateL[Rate Limiting]:::cybersec;
+    CaesarShift[Caesar Shift]:::cybersec;
+    DoS[Denial of Service]:::cybersec;
+    %%Moderation[Content Moderation]:::cybersec;
+    %%PortScan[Port Scanning]:::cybersec;
+    %%Firewalls:::cybersec;
+
+    Confidentiality:::cybersec;
+    Integrity:::cybersec;
+    Availability:::cybersec;
+    CIA[CIA Triad]:::cybersec;
+
+    Availability:::cybersec--->|part of|CIA:::cybersec;
+    Confidentiality:::cybersec--->|part of|CIA:::cybersec;
+    Integrity:::cybersec--->|part of|CIA:::cybersec;
+
+    Encryption:::cybersec--->|a technique for|Confidentiality:::cybersec;
+    Encryption:::cybersec--->|a technique for|Integrity:::cybersec;
+
+    RateL:::cybersec--->|a technique to mitigate|DoS:::cybersec;
+    CaesarShift:::cybersec--->|an algorithm for|Encryption:::cybersec;
+    DoS:::cybersec--->|an attack on|Availability:::cybersec;
+  end
+  
+  subgraph AI/ML[Artificial Intelligence/Machine Learning]
+    Classification:::ai;
+    RuleAI[Rule-based AI]:::ai;
+    Regression:::ai;
+    GD[Gradient Descent]:::ai;
+    AE[Adversarial Examples]:::ai;
+    GANs[Generative Adversarial Networks]:::ai;
+    SA[Sentiment Analysis]:::ai;
+    Toxic[Toxicity Detection]:::ai;
+    DT[Decision Tree]:::ai;
+    NLP[Natural Language Processing]:::ai;
+    Opt[Optimization]:::ai;
+    GA[Generative AI]:::ai;
+
+    SL[Supervised Learning]:::ai;
+    %%UL[Unsupervised Learning]:::ai;
+    %%RL[Reinforcement Learning]:::ai;
+
+    AI[Artificial Intelligence]:::ai;
+    ML[Machine Learning]:::ai;
+    ML--->|data-driven approach to|AI;
+    Opt--->|powers learning in|ML;
+    RuleAI--->|a heuristics-based approach to|AI;
+    AE--->|tries to fool models using|Opt;
+
+    SL--->|uses labeled data for|ML;
+    %%UL--->|a type of|ML;
+    %%RL--->|a type of|ML;
+
+    GA--->|a type of|ML;
+
+
+    Regression--->|a type of|SL;
+    Classification--->|a type of|SL;
+
+    DT--->|can perform|Classification;
+    DT--->|can perform|Regression;
+
+    GD--->|a technique for|Opt;
+    GANs--->|a technique for|GA;
+
+    SA--->|an example of|Classification;
+    SA--->|a type of|NLP;
+    Toxic--->|an example of|Classification;
+    Toxic--->|a type of|NLP;
+
+    %%Overfitting--->|caused by too much|MV;
+    %%Underfitting--->|caused by too much|MB;
+    %%MB----|trades off with|MV;
+  end
+
+  %% Inter-category links
+  Server--->|is vulnerable to|DoS;
+  MP--->|may use|Encryption;
+
+  RateL--->|can be viewed as|RuleAI;
+  RateL--->|can be viewed as|Classification;
+  GA--->|can spoof|Integrity;
+
+  click A exampleCallback "Tooltip for a callback"
+  click B "http://www.github.com" "This is a tooltip for a link"
+
+  classDef cybersec stroke:#e21818
+  classDef ai stroke:#00235b;
+  classDef cs stroke:#98dfd6
+  classDef other stroke:#ffdd83

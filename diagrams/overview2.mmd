@@ -1,0 +1,70 @@
+  graph LR;
+  subgraph cybersecurity
+    Encryption:::cybersec--->|a technique for|Confidentiality:::cybersec;
+    Moderation:::cybersec;
+    RateL[Rate Limiting]:::cybersec;
+  end
+  
+  subgraph AI/ML
+    Classification:::ai;
+    Regression:::ai;
+    GD[Gradient Descent]:::ai;
+    AE[Adversarial Examples]:::ai;
+    GANs[Generative Adversarial Networks]:::ai;
+    SA[Sentiment Analysis]:::ai;
+    NLP[Natural Language Processing]:::ai;
+    Opt[Optimization]:::ai;
+    GA[Generative AI]:::ai;
+
+    Overfitting:::ai;
+    Underfitting:::ai;
+    MB[Model Bias]:::ai;
+    MV[Model Variance]:::ai;
+
+    SL[Supervised Learning]:::ai;
+    UL[Unsupervised Learning]:::ai;
+    RL[Reinforcement Learning]:::ai;
+
+    ML[Machine Learning]:::ai;
+
+    SL--->|a type of|ML;
+    UL--->|a type of|ML;
+    RL--->|a type of|ML;
+    GA--->|a type of|ML;
+
+
+    Regression--->|a type of|SL;
+    Classification--->|a type of|SL;
+
+    GD--->|a technique for|Opt;
+    GANs--->|a technique for|GA;
+
+    SA--->|an example of|Classification;
+    SA--->|a type of|NLP;
+
+    Overfitting--->|caused by too much|MV;
+    Underfitting--->|caused by too much|MB;
+    MB----|trades off with|MV;
+
+
+
+  end
+
+  Server:::cs;
+  Client:::cs;
+
+
+
+  
+
+
+
+
+
+  click A exampleCallback "Tooltip for a callback"
+  click B "http://www.github.com" "This is a tooltip for a link"
+
+  classDef cybersec stroke:#e21818
+  classDef ai stroke:#00235b
+  classDef cs stroke:#98dfd6
+  classDef other stroke:#ffdd83
