@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cyberai4k12.github.io/curriculum//sitemap.xml
